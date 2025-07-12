@@ -22,5 +22,5 @@ spring:
 
   security:
     user:
-      name: user
-      password: password1
+      name: ${SECURITY_USER}
+      password: ${SECURITY_PASSWORD}
