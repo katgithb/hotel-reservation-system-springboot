@@ -19,3 +19,8 @@ spring:
       hibernate:
         format_sql: true
     show-sql: false
+
+  security:
+    user:
+      name: user
+      password: password1
