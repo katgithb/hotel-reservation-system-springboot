@@ -6,3 +6,16 @@ server:
 spring:
   application:
     name: hrs-api
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/hrs_db
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: 'update'
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
