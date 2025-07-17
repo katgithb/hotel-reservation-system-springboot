@@ -1,7 +1,6 @@
 package com.zenhotel.hrs_api.entity;
 
 
-import com.zenhotel.hrs_api.enums.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -42,8 +41,9 @@ public class User {
     private String phoneNumber;
 
     @NotNull
-    @Enumerated(EnumType.STRING)
-    private UserRole role; //e.g CUSTOMER, ADMIN
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 
     @NotNull
     private Boolean isActive;
