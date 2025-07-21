@@ -20,7 +20,8 @@ spring:
         format_sql: true
     show-sql: false
 
-  security:
-    user:
-      name: ${SECURITY_USER}
-      password: ${SECURITY_PASSWORD}
+jwt:
+  secret-key: ${JWT_SECRET_KEY}
+  token:
+    issuer: ${JWT_TOKEN_ISSUER}
+    expiry-duration-seconds: ${JWT_TOKEN_EXPIRY_DURATION_SECONDS}
