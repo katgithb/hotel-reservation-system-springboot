@@ -116,6 +116,18 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorResponse, status);
     }
 
+    @ExceptionHandler(CloudinaryResourceException.class)
+    public ResponseEntity<ApiErrorResponse> handleCloudinaryResourceException(CloudinaryResourceException e,
+                                                                              HttpServletRequest request) {
+        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+        ApiErrorResponse errorResponse = new ApiErrorResponse(
+                request.getRequestURI(),
+                status.value(),
+                e.getMessage());
+
+        return new ResponseEntity<>(errorResponse, status);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiErrorResponse> handleGenericException(Exception e,
                                                                    HttpServletRequest request) {
