@@ -2,6 +2,7 @@ package com.zenhotel.hrs_api.controller;
 
 import com.zenhotel.hrs_api.payload.*;
 import com.zenhotel.hrs_api.service.BookingService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/bookings")
+@Tag(name = "Bookings", description = "Booking Management Endpoints")
 @RequiredArgsConstructor
 public class BookingController {
 
