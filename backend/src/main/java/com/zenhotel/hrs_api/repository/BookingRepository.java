@@ -12,6 +12,8 @@ import java.util.Optional;
 
 public interface BookingRepository extends JpaRepository<Booking, Long> {
 
+    boolean existsByBookingReference(String bookingReference);
+
     // Fetch all bookings for a specific user
     Page<Booking> findByUserId(Long userId, Pageable pageable);
 
