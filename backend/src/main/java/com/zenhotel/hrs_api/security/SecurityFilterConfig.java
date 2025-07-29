@@ -40,6 +40,10 @@ public class SecurityFilterConfig {
                 .authorizeHttpRequests(request -> request
                         // Allow access to actuator endpoints
                         .requestMatchers(HttpMethod.GET, "/actuator/**").permitAll()
+                        // Allow swagger-ui resources
+                        .requestMatchers("/v3/api-docs/**",
+                                "/swagger-ui.html",
+                                "/swagger-ui/**").permitAll()
                         .requestMatchers("/api/v1/auth/**",
                                 "/api/v1/rooms/**",
                                 "/api/v1/bookings/**").permitAll()

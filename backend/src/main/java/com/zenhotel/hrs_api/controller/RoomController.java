@@ -3,6 +3,7 @@ package com.zenhotel.hrs_api.controller;
 import com.zenhotel.hrs_api.enums.RoomType;
 import com.zenhotel.hrs_api.payload.*;
 import com.zenhotel.hrs_api.service.RoomService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/rooms")
+@Tag(name = "Rooms", description = "Room Management Endpoints")
 @RequiredArgsConstructor
 public class RoomController {
 

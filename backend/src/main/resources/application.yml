@@ -19,9 +19,20 @@ spring:
       hibernate:
         format_sql: true
     show-sql: false
+    # Defer initialization until JPA entities are created
+  #    defer-datasource-initialization: true
+  # Enable SQL initialization for non-embedded databases
+  #  sql:
+  #    init:
+  #      mode: always
 
 app:
   base-url: ${APP_BASE_URL}
+  # Admin user configuration
+  admin:
+    email: ${APP_ADMIN_EMAIL:devadmin@example.com} # Default value for development
+    password: ${APP_ADMIN_PASSWORD:adminpass}   # Default value for development
+    phone-number: ${APP_ADMIN_PHONE_NUMBER:+18005550123} # Default value for development
 
 jwt:
   secret-key: ${JWT_SECRET_KEY}
