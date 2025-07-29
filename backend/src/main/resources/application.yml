@@ -42,3 +42,8 @@ mailjet:
   sender:
     email: ${MAILJET_SENDER_EMAIL}
     name: ${MAILJET_SENDER_NAME}
+
+stripe:
+  api:
+    public-key: ${STRIPE_API_PUBLIC_KEY}
+    secret-key: ${STRIPE_API_SECRET_KEY}
