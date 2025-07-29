@@ -40,7 +40,7 @@ public class Room {
     private BigDecimal pricePerNight;
 
     @NotNull
-    @Min(value = 1, message = "capacity must be at least 1")
+    @Min(value = 1, message = "Capacity must be at least 1")
     private Integer capacity;
 
     private String description; //additional data for the room
@@ -52,5 +52,5 @@ public class Room {
     @NotNull
     @PastOrPresent
     private final OffsetDateTime createdAt = OffsetDateTime.now();
-    
+
 }
