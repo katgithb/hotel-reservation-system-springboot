@@ -24,4 +24,8 @@ public class BookingReference {
     @Column(unique = true, nullable = false)
     private String referenceNo;
 
+    public BookingReference(String referenceNo) {
+        this.referenceNo = referenceNo;
+    }
+    
 }
