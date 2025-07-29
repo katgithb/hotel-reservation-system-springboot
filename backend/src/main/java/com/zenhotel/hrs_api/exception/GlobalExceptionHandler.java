@@ -128,6 +128,19 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorResponse, status);
     }
 
+    @ExceptionHandler(EmailDeliveryException.class)
+    public ResponseEntity<ApiErrorResponse> handleEmailDeliveryException(EmailDeliveryException e,
+                                                                         HttpServletRequest request) {
+        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+        ApiErrorResponse errorResponse = new ApiErrorResponse(
+                request.getRequestURI(),
+                status.value(),
+                e.getMessage(),
+                "EMAIL_DELIVERY_ERROR");
+
+        return new ResponseEntity<>(errorResponse, status);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiErrorResponse> handleGenericException(Exception e,
                                                                    HttpServletRequest request) {
