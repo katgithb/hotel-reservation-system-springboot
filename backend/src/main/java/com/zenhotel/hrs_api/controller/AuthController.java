@@ -5,6 +5,7 @@ import com.zenhotel.hrs_api.payload.UserAuthRequest;
 import com.zenhotel.hrs_api.payload.UserAuthResponse;
 import com.zenhotel.hrs_api.payload.UserRegistrationRequest;
 import com.zenhotel.hrs_api.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/auth")
+@Tag(name = "Authentication", description = "Authentication Endpoints")
 @RequiredArgsConstructor
 public class AuthController {
 

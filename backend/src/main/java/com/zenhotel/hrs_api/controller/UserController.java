@@ -2,6 +2,7 @@ package com.zenhotel.hrs_api.controller;
 
 import com.zenhotel.hrs_api.payload.*;
 import com.zenhotel.hrs_api.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/users")
+@Tag(name = "Users", description = "User Management Endpoints")
 @RequiredArgsConstructor
 public class UserController {
 
