@@ -141,6 +141,13 @@
             <version>1.39.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.mailjet/mailjet-client -->
+        <dependency>
+            <groupId>com.mailjet</groupId>
+            <artifactId>mailjet-client</artifactId>
+            <version>6.0.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
