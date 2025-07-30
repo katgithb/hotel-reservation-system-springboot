@@ -7,17 +7,17 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
 @TestConfiguration(proxyBeanMethods = false)
-class TestcontainersConfiguration {
+public class TestcontainersConfig {
 
-	@Bean
-	@ServiceConnection
-	MySQLContainer<?> mysqlContainer() {
+    @Bean
+    @ServiceConnection
+    MySQLContainer<?> mysqlContainer() {
 
         return new MySQLContainer<>(
                 DockerImageName.parse("mysql:8.0-debian"))
                 .withDatabaseName("hrs_dao_unit_test_db")
                 .withUsername("test_user")
                 .withPassword("testpassword");
-	}
+    }
 
 }
